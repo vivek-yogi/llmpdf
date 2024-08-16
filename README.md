@@ -7,7 +7,7 @@
 Clone the repository
 
 ```bash
-Project repo: https://github.com/
+Project repo: https://github.com/vivek-yogi/llmpdf.git
 ```
 ### STEP 01- Create a conda environment after opening the repository
 
@@ -52,3 +52,5 @@ open up : http://localhost:8501
 - Streamlit 
 - Gemini Pro
 - ChoromaDB
+
+### 

@@ -14,21 +14,21 @@ os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key = os.getenv('GOOGLE_API_KEY'))
 
 def get_pdf_text(path):
+    '''This function is used to get the data in PDF format '''
     loader = PyPDFDirectoryLoader(path)
     data   = loader.load_and_split()
     context = "\n".join(str(p.page_content) for p in data)
     return context
 
 def get_text_chunks(context):
+    '''This function will convert the text into chunks'''
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     texts = text_splitter.split_text(context)
     return texts
 
 def get_conversational_chain():
-    model = ChatGoogleGenerativeAI(model = 'gemini-pro',
-                                   temperature =0.3)
-    prompt = PromptTemplate(template = prompt_template,
-                            input_variables = ['context','question'])
+    model = ChatGoogleGenerativeAI(model = 'gemini-pro', temperature =0.3)
+    prompt = PromptTemplate(template = prompt_template,input_variables = ['context','question'])
     chain = load_qa_chain(model,chain_type = 'stuff',prompt=prompt)
     return chain
 
