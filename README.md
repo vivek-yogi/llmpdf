@@ -35,6 +35,8 @@ GOOGLE_API_KEY= "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```bash
 # Finally run the following command
 streamlit run app.py
+or
+streamlit run app.py --server.enableXsrfProtection false
 ```
 
 Now,
