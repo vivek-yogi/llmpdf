@@ -6,4 +6,5 @@ chromadb
 langchain
 streamlit
 langchain-google-genai 
+langchain-community
 -e .  
